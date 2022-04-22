@@ -20,6 +20,7 @@ import { setData, setNotification } from '../redux/user/user.action';
 import axios from 'axios';
 import FollowerList from './FollowerList';
 import WithDrawScreen from './WithDrawScreen';
+import Online from './Online';
 
 
 
@@ -256,6 +257,7 @@ function HigherComp({currentUser, updateCoinData, coinData,setNoti}) {
                 <Drawer.Screen name="Performer" component={Performer} options={{headerShown:false, unmountOnBlur:true}} /> 
                 <Drawer.Screen name="Followers" component={FollowerList} options={{headerShown:false, unmountOnBlur:true}} /> 
                 <Drawer.Screen name="WithDraw" component={WithDrawScreen} options={{headerShown:false, unmountOnBlur:true}} /> 
+                <Drawer.Screen name="Online" component={Online} options={{headerShown:false, unmountOnBlur:true}} /> 
                 </>
                 )
             }

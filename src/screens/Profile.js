@@ -9,6 +9,7 @@ import Ico from 'react-native-vector-icons/Ionicons';
 import Ic from 'react-native-vector-icons/FontAwesome5';
 import Footer from '../components/Footer';
 import { setCurrentUser } from '../redux/user/user.action';
+import { getDatabase, ref, remove } from 'firebase/database';
 
 const dark= '#10152F';
 const Profile = ({navigation, currentUser, setUser}) => {
@@ -89,6 +90,22 @@ const Profile = ({navigation, currentUser, setUser}) => {
             </LinearGradient>
             </TouchableOpacity>
 
+            <TouchableOpacity style={styles.users} onPress={() =>{
+                navigation.navigate('Online');
+            }}>
+                <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+                    <View style={{padding:20, paddingVertical:10}}>
+                        <Ic name='users' color="#00ff00" size={50} />
+                    </View>
+                    <View style={{flexDirection:'column', justifyContent:'space-evenly', flex:1, marginTop:10, marginBottom:10}}>
+                        <Text style={{color:'#fff', fontSize:20, fontWeight:'800'}}>Online Customers</Text>
+                    </View>
+                    <View style={{padding:20, justifyContent:'center'}}>
+                        <Ic name="chevron-right" size={30} color='#fff' />
+                    </View>
+                </View>
+            </TouchableOpacity>
+
             <View style={{flexDirection:'column', padding:20}}>
                 {/* <TouchableOpacity activeOpacity={0.4}>
                 <View style={{flexDirection:'row', justifyContent:'space-between', margin:10}}>
@@ -121,6 +138,21 @@ const Profile = ({navigation, currentUser, setUser}) => {
 }
 const styles = StyleSheet.create({
     coins:{
+        justifyContent:'center', 
+        width:'90%', 
+        borderRadius:50, 
+        alignSelf:'center',
+        shadowColor: "#fff",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+    },
+    users:{
         justifyContent:'center', 
         width:'90%', 
         borderRadius:50, 

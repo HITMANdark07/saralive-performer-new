@@ -204,9 +204,9 @@ const WithDrawScreen = ({navigation, currentUser}) => {
     (
       <>
       <View style={{flexDirection:'column', width:windowWidth-40, alignSelf:'center'}}>
-        <InputText name="bankName" icon="account-balance" placeholder="Bank Name" value={bankName} handleChange={handleChange} type="text" />
+        <InputText name="bankName" icon="account-balance" placeholder="Bank Name" value={bankName} handleChange={handleChange} type="default" />
         <InputText name="accountno" icon="account-balance" placeholder="Account Number" value={accountno} handleChange={handleChange} type="numeric" />
-        <InputText name="ifsc" icon="account-tree" placeholder="IFSC Code" value={ifsc} handleChange={handleChange} type="text" />
+        <InputText name="ifsc" icon="account-tree" placeholder="IFSC Code" value={ifsc} handleChange={handleChange} type="default" />
         <InputText name="coin" icon="money" placeholder="Coins to withdraw" value={coin} handleChange={handleChange} type="numeric" />
         {loading ?
         (
